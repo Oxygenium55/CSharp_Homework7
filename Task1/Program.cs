@@ -38,8 +38,8 @@ void PrintArray(double[,] array)
     }
 }
 
-int n = GetNumber("Задайте количество строк: ");
-int m = GetNumber("Задайте количество столбцов: ");
+int m = GetNumber("Задайте количество строк: ");
+int n = GetNumber("Задайте количество столбцов: ");
 double[,] array = InitArray(m, n);
 PrintArray(array);
 
