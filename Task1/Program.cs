@@ -14,13 +14,13 @@ int GetNumber(string msg)
 
 double[,] InitArray(int m, int n)
 {
-    Random rnd = new Random();
     double[,] array = new double[m, n];
+    Random rnd = new Random();
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            array[i, j] = rnd.Next(-10, 10);
+            array[i, j] = -10 + rnd.NextDouble() * (10 - (-10)); // числа с дробной частью в диапазоне (-10;10)
         }
     }
     return array;
@@ -32,7 +32,7 @@ void PrintArray(double[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{array[i, j]} ");
+            Console.Write($"{Math.Round(array[i, j], 1)}  ");
         }
         Console.WriteLine();
     }
